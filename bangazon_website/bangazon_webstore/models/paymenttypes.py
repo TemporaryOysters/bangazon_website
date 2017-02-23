@@ -1,6 +1,7 @@
 from django.db import models
 from bangazon_webstore.models.customer import Customer
 
+
 class PaymentType(models.Model):
     
     """PaymentType model class

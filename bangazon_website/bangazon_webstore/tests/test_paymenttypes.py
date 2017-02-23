@@ -21,6 +21,7 @@ class TestPaymentType(TestCase):
 
     """
 
+
     @classmethod
     def setUp(self):
 
