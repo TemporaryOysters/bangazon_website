@@ -64,19 +64,7 @@ class TestPaymentType(TestCase):
 
 
 
-    # def test_can_save_to_database(self):
-    #     # self.visa.save(self.visa)
-    #     self.assertTrue(PaymentMethod.payment_is_registered(self.visa))
-    #     print(self.visa.get_card_type())
 
-    # def test_payment_has_properties(self):
-    #     # Testing if visa Has All Required Field Properties
-    #     self.assertIsNotNone(self.visa.get_name_on_card())
-    #     self.assertIsNotNone(self.visa.get_card_type())
-    #     self.assertIsNotNone(self.visa.get_card_number())
-    #     self.assertIsNotNone(self.visa.get_exp_date())
-    #     self.assertIsNotNone(self.visa.get_cvv())
-    #     self.assertIsNotNone(self.visa.get_customer())
 
     # def test_can_get_payment_id(self):
     #     self.assertEqual(1, self.visa.get_payment_id(self.visa)) 
