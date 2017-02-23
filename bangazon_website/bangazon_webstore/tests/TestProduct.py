@@ -18,7 +18,7 @@ class TestProduct(TestCase):
         
     Author: Joey Kirby, TempOysters
     '''
-    print("TestProduct: 3 tests")
+    print("TestProduct: 4 tests")
 
     @classmethod
     def setUp(self):
@@ -37,11 +37,18 @@ class TestProduct(TestCase):
         self.assertEqual(self.kickball.get_product_type(), self.toys)
 
     def test_product_can_be_purchased(self):
+        self.kickball.purchase_product(100)
         self.kickball.purchase_product(1)
         self.assertEqual(self.kickball.get_quantity(), 2)
 
     def test_seller_can_set_new_quantity(self):
         self.assertEqual(self.kickball.seller_set_quantity(50), 50)
+
+    def test_can_set_new_description_on_product(self):
+        updated_kb_description = "It really is a round ball"
+
+        self.kickball.set_description(updated_kb_description)
+        self.assertEqual(self.kickball.get_description(), "It really is a round ball")
 
 if __name__ == '__main__':
     main()
