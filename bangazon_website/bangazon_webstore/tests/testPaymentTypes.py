@@ -12,9 +12,8 @@ class TestPaymentType(TestCase):
     Author: Zach
     Tests: 
     test_can_create_a_payment_type
-    test_can_save_to_database
-    test_payment_has_properties
-    test_can_get_payment_id
+    test_if_payment_has_relevant_properties
+    test_can_get_payment_id***
 
 
     """
@@ -59,12 +58,11 @@ class TestPaymentType(TestCase):
 
 
     def test_can_get_payment_type_id_from_database(self):
+    #   self.assertEqual(1, self.visa.get_payment_id(self.visa)) 
+        pass
 
 
 
 
 
 
-
-    # def test_can_get_payment_id(self):
-    #     self.assertEqual(1, self.visa.get_payment_id(self.visa)) 
