@@ -1,5 +1,5 @@
 from django.db import models
-
+from bangazon_webstore.models.customer import Customer
 
 class PaymentType(models.Model):
     
@@ -14,7 +14,7 @@ class PaymentType(models.Model):
     cvv = models.CharField(max_length=4)
     expiration = models.DateField(auto_now=False)
     name_on_card = models.CharField(max_length=55)
-    # customer = models.ForeignKey(Customer, null=True)
+    customer = models.ForeignKey(Customer, null=True)
 
     class Meta:
         verbose_name_plural = "PaymentTypes"
