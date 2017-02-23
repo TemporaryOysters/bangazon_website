@@ -1,0 +1,15 @@
+from django.db import models
+
+class ProductType(models.Model):
+    """
+    Stores a single product type, "label_name"
+    author: Richie Van Sickle
+    """
+    label_name = models.CharField(max_length=55)
+
+    def get_product_type_label(self):
+        """
+        Returns the label_name
+        author: Richie Van Sickle
+        """
+        return self.label_name 
