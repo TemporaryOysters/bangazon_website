@@ -8,16 +8,17 @@ class TestProduct(TestCase):
     TestProduct tests the Product: model, serializer, & view to guarantee are code is doing what is expected.
 
     method list:
-    -SetUpClass
+    -setUp
     -test_product_model_can_be_created_with_correct_fields
-    -test_product_model_can_be_created_with_correct_fields
+    -test_product_can_be_purchased
+    -test_seller_can_set_new_quantity
 
     Argument List:
-    -TestCase: This argument 
+    -TestCase: unittest provides a base class, TestCase, which may be used to create new test cases.
         
     Author: Joey Kirby, TempOysters
     '''
-    print("3 tests are coming from TestProduct")
+    print("TestProduct: 3 tests")
 
     @classmethod
     def setUp(self):
@@ -27,7 +28,6 @@ class TestProduct(TestCase):
 
     def test_product_model_can_be_created_with_correct_fields(self):
         self.assertIsInstance(self.kickball, product_model.Product)
-
         self.assertEqual(self.kickball.get_product_name(), "kickball")
         self.assertEqual(self.kickball.get_description(), "Round Ball")
         self.assertEqual(self.kickball.get_price(), 5)
@@ -35,7 +35,7 @@ class TestProduct(TestCase):
         # self.assertEqual(kickball.seller, "Joey")
         # self.assertEqual(kickball.name, "Toys")
 
-    def test_purchase_product(self):
+    def test_product_can_be_purchased(self):
         self.kickball.purchase_product(1)
         self.assertEqual(self.kickball.get_quantity(), 2)
 
