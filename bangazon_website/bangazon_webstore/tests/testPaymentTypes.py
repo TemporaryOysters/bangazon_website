@@ -49,12 +49,18 @@ class TestPaymentType(TestCase):
         self.assertIsInstance(self.visa, PaymentType)
 
     def test_if_payment_has_relevant_properties(self):
-        self.assertIsNotNone(self.visa.get_name_on_card())
-        self.assertIsNotNone(self.visa.get_card_type())
-        self.assertIsNotNone(self.visa.get_card_number())
-        self.assertIsNotNone(self.visa.get_expiration())
-        self.assertIsNotNone(self.visa.get_cvv())
-        self.assertIsNotNone(self.visa.get_customer())
+        self.assertEqual("Zachary A Cline", self.visa.get_name_on_card())
+        self.assertEqual("Visa", self.visa.get_card_type())
+        self.assertEqual("2224-333-3344", self.visa.get_card_number())
+        self.assertEqual("08/20", self.visa.get_expiration())
+        self.assertEqual(111, self.visa.get_cvv())
+        self.assertEqual(self.zach.id, self.visa.get_customer())
+
+
+
+    def test_can_get_payment_type_id_from_database(self):
+
+
 
 
 
