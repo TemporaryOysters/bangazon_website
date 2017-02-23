@@ -31,8 +31,8 @@ class PaymentType(models.Model):
     def get_card_number(self):
         return self.__card_number
 
-    def get_exp_date(self):
-        return self.__exp_date
+    def get_expiration(self):
+        return self.__expiration
 
     def get_cvv(self):
         return self.__cvv
