@@ -1,7 +1,7 @@
 from django.test import TestCase
 import sys
 sys.path.append("../")
-from bangazon_webstore.models import bangazon_order_model
+from bangazon_webstore.models import bangazon_order_model, paymenttypes, customer
 
 
 class TestOrderCanBeCompleted(TestCase):
@@ -17,28 +17,32 @@ class TestOrderCanBeCompleted(TestCase):
         """
         Sets up a Test customer and payment type.
         """
-        visa = PaymentType.objects.create(
-            """
+        self.joey = customer.Customer(
+            
+            first_name = "Joey",
+            last_name="L",
+            address="1234 Wrong way", city="Nashville",
+            state_province="tennessee",
+            country="USA",
+            postal_code="12345",
+            user = 1
+            )
+        
+        self.visa = paymenttypes.PaymentType(
+            
             card_number="1234123412341234",
             card_type="Visa", cvv="123",
             expiration_date="2018-01-01",
-            name_on_card="Bada Bing"
-            """)
+            name_on_card="Bada Bing",
+            customer = self.joey
+            )
 
-        joey = Customer.objects.create(
-            """
-            name="Joey L",
-            address="1234 Wrong way", city="Nashville",
-            state="tennessee", postal_code="12345",
-            payment_type=1
-            """)
-
-        joeys_order = BangazonOrder.objects.create(
-            """
-            customerId = 1
-            payment_typeId = 1
+        self.joeys_order = bangazon_order_model.BangazonOrder(
+            
+            customer = self.joey,
+            payment_type = self.visa,
             order_is_complete = 0
-            """)
+            )
 
     def test_order_contains_all_necessary_info(self):
         """
@@ -46,9 +50,9 @@ class TestOrderCanBeCompleted(TestCase):
         with correct attributes
         and has been assigned to the logged in user (customer).
         """
-        self.assertEqual(joeys_order[1], 1)
-        self.assertEqual(joeys_order[2], 1)
-        self.assertEqual(joeys_order[3], 0)
+        self.assertEqual(self.joeys_order.customer, 1)
+        self.assertEqual(self.joeys_order.payment_type, 1)
+        self.assertEqual(self.joeys_order.order_is_complete, 0)
 
 if __name__ == '__main__':
      main()
