@@ -2,7 +2,7 @@ from django.test import TestCase
 import sys
 sys.path.append("../")
 from bangazon_webstore.models import bangazon_order_model, paymenttypes, customer
-
+from django.contrib.auth.models import User
 
 class TestOrderCanBeCompleted(TestCase):
     """
@@ -17,6 +17,8 @@ class TestOrderCanBeCompleted(TestCase):
         """
         Sets up a Test customer and payment type.
         """
+        self.user_joey = User(email="j@j.com", password="1234")
+
         self.joey = customer.Customer(
             
             first_name = "Joey",
@@ -25,14 +27,14 @@ class TestOrderCanBeCompleted(TestCase):
             state_province="tennessee",
             country="USA",
             postal_code="12345",
-            user = 1
+            user = self.user_joey
             )
         
         self.visa = paymenttypes.PaymentType(
             
             card_number="1234123412341234",
             card_type="Visa", cvv="123",
-            expiration_date="2018-01-01",
+            expiration="2018-01-01",
             name_on_card="Bada Bing",
             customer = self.joey
             )
@@ -50,8 +52,8 @@ class TestOrderCanBeCompleted(TestCase):
         with correct attributes
         and has been assigned to the logged in user (customer).
         """
-        self.assertEqual(self.joeys_order.customer, 1)
-        self.assertEqual(self.joeys_order.payment_type, 1)
+        self.assertEqual(self.joeys_order.customer.first_name, "Joey")
+        self.assertEqual(self.joeys_order.payment_type, self.visa)
         self.assertEqual(self.joeys_order.order_is_complete, 0)
 
 if __name__ == '__main__':
