@@ -6,7 +6,7 @@ from django.contrib.auth import logout, login, authenticate
 from django.http import HttpResponse, HttpResponseRedirect
 import sys
 sys.path.append("../")
-from bangazon_webstore.models import customer
+from bangazon_webstore.models import customer_model
 
 
 class RegisterViewSet(TemplateView):
@@ -16,10 +16,10 @@ class RegisterViewSet(TemplateView):
 def register_customer(request):
     data = request.POST
     user = User.objects.create_user(
-        email = data['email'],
+        username = data['username'],
         password = data['password'],
         )
-    customer = Customer.objects.create(
+    customer = customer_model.Customer.objects.create(
         first_name = data['first_name'],
         last_name = data['last_name'],
         address = data['address'],
@@ -27,6 +27,7 @@ def register_customer(request):
         state_province = data['state_province'],
         country = data['country'],
         postal_code = data['postal_code'],
+        email = data['email'],
         user = user
     )
     return login_customer(request)
@@ -37,20 +38,19 @@ class LoginViewSet(TemplateView):
 
 def login_customer(request):
     data = request.POST
-    email = data['email']
+    username = data["username"]
     password = data['password']
     user = authenticate(
-        username = email,
+        username = username,
         password = password
     )
     if user is not None:
         login(request = request, user = user)
+        return HttpResponseRedirect(redirect_to='/webstore/products')
     else:
-        return HttpResponseRedirect(redirect_to='/')
-    return HttpResponseRedirect(redirect_to='/success')
-
+        return HttpResponseRedirect(redirect_to='/webstore/login')
 
 
 def logout_customer(request):
     logout(request)
-    return HttpResponseRedirect(redirect_to='/')
+    return HttpResponseRedirect(redirect_to='/webstore/login')
