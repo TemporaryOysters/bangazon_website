@@ -14,7 +14,7 @@ class Customer(models.Model):
     state_province = models.CharField(max_length=55)
     country = models.CharField(max_length=55)
     postal_code = models.CharField(max_length=9)
-    email = models.CharField(max_length=55)
+    email = models.EmailField(max_length=55)
     user = models.OneToOneField(User)
 
     class Meta:
