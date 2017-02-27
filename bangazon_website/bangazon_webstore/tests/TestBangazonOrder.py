@@ -56,5 +56,12 @@ class TestOrderCanBeCompleted(TestCase):
         self.assertEqual(self.joeys_order.payment_type, self.visa)
         self.assertEqual(self.joeys_order.order_is_complete, 0)
 
+class BangazonOrderViewTests(TestCase):
+    """
+    This is to test the view for Bangazon Orders.
+    """
+    def test_can_list_bangazon_orders(self):
+        pass
+
 if __name__ == '__main__':
      main()
