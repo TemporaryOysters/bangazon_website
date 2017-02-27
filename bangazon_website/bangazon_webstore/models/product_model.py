@@ -1,6 +1,6 @@
 import sqlite3
 from django.db import models
-from . import customer, product_type_model
+from . import customer_model, product_type_model
 
 
 class Product(models.Model):
@@ -26,7 +26,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     quantity = models.IntegerField()
-    seller = models.ForeignKey(customer.Customer)
+    seller = models.ForeignKey(customer_model.Customer)
     product_type = models.ForeignKey(product_type_model.ProductType)
 
     def get_product_name(self):
