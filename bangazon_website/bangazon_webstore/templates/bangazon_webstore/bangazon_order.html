@@ -1,0 +1,13 @@
+{% block order %}
+    <table>
+    <tr>
+    {% for order in orders %}
+            <td>{{ order }}</td>
+        {% if not forloop.last and forloop.counter == 3 or forloop.counter == 6 %}
+        </tr>
+        <tr>
+        {% endif %}
+    {% endfor %}
+        </tr>
+    </table>
+{% endblock %}
