@@ -61,6 +61,7 @@ class BangazonOrderViewTests(TestCase):
     This is to test the view for Bangazon Orders.
     """
     def test_can_list_bangazon_orders(self):
+        pass
 
 if __name__ == '__main__':
      main()
