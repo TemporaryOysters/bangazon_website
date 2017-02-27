@@ -1,7 +1,7 @@
 from django.test import TestCase
 import sys
 sys.path.append("../")
-from bangazon_webstore.models import bangazon_order_model, paymenttypes, customer
+from bangazon_webstore.models import bangazon_order_model, paymenttypes, customer_model
 from django.contrib.auth.models import User
 
 class TestOrderCanBeCompleted(TestCase):
@@ -19,7 +19,7 @@ class TestOrderCanBeCompleted(TestCase):
         """
         self.user_joey = User(email="j@j.com", password="1234")
 
-        self.joey = customer.Customer(
+        self.joey = customer_model.Customer(
             
             first_name = "Joey",
             last_name="L",
