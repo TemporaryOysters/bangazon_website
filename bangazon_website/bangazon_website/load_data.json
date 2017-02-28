@@ -171,5 +171,32 @@
         "name_on_card": "Richard Sherman",
         "customer": 3
     }
+},
+    {
+    "model": "bangazon_webstore.bangazonorder",
+    "pk": 1,
+    "fields": {
+        "order_is_complete": true,
+        "customer_id": 1,
+        "payment_type_id": 1
+    }
+},
+    {
+    "model": "bangazon_webstore.bangazonorder",
+    "pk": 2,
+    "fields": {
+        "order_is_complete": true,
+        "customer_id": 2,
+        "payment_type_id": 2
+    }
+},
+    {
+    "model": "bangazon_webstore.bangazonorder",
+    "pk": 3,
+    "fields": {
+        "order_is_complete": true,
+        "customer_id": 3,
+        "payment_type_id": 3
+    }
 }
 ]
