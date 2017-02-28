@@ -1,0 +1,175 @@
+[
+    {
+    "model": "bangazon_webstore.product",
+    "pk": 1,
+    "fields": {
+        "name": "9V Battery",
+        "price": 3.59,
+        "description": "HIGH VOLTAGE",
+        "quantity": 3,
+        "product_type": 1,
+        "seller_id": 1
+    }
+}, {
+    "model": "bangazon_webstore.product",
+    "pk": 2,
+    "fields": {
+        "name": "Jolt Cola",
+        "price": 1.25,
+        "description": "Refreshing Cola",
+        "quantity": 2,
+        "product_type": 2,
+        "seller_id": 2
+    }
+},
+    {
+    "model": "bangazon_webstore.product",
+    "pk": 3,
+    "fields": {
+        "name": "Rubber Nipples",
+        "price": 12.59,
+        "description": "RN",
+        "quantity": 2,
+        "product_type": 3,
+        "seller_id": 1
+    }
+},
+    {
+    "model": "bangazon_webstore.product",
+    "pk": 4,
+    "fields": {
+        "name": "Spray Cheese",
+        "price": 4.99,
+        "description": "CHEESE-EEEE",
+        "quantity": 3,
+        "product_type": 2,
+        "seller": 3
+    }
+},
+    {
+    "model": "bangazon_webstore.producttype",
+    "pk": 1,
+    "fields": {
+        "label_name": "Electronics"
+    }
+},  
+    {
+    "model": "bangazon_webstore.producttype",
+    "pk": 2,
+    "fields": {
+        "label_name": "Food"
+    }
+},
+    {
+    "model": "bangazon_webstore.producttype",
+    "pk": 3,
+    "fields": {
+        "label_name": "Home Goods"
+    }
+},
+    {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "username": "Johnny@aol.com",
+        "password": "1234"
+    }
+},  
+    {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "username": "Ashley@gmail.com",
+        "password": "1234"
+    }
+},
+    {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "username": "Richard@yahoo.com",
+        "password": "1234"
+    }
+},
+    {
+    "model": "bangazon_webstore.customer",
+    "pk": 1,
+    "fields": {
+        "first_name": "Johnny",
+        "last_name": "Appleseed",
+        "address": "monkey lane",
+        "city": "Nowhere",
+        "state_province": "TX",
+        "country": "for old men",
+        "postal_code": "12345",
+        "email": "Johnny@aol.com",
+        "user_id": 1
+    }
+},
+    {
+    "model": "bangazon_webstore.customer",
+    "pk": 2,
+    "fields": {
+        "first_name": "Ashley",
+        "last_name": "Simpson",
+        "address": "lip sync st",
+        "city": "Somewhere",
+        "state_province": "CA",
+        "country": "for young men",
+        "postal_code": "12345",
+        "email": "Ashley@gmail.com",
+        "user_id": 2
+    }
+},
+    {
+    "model": "bangazon_webstore.customer",
+    "pk": 3,
+    "fields": {
+        "first_name": "Richard",
+        "last_name": "Sherman",
+        "address": "Football Dr",
+        "city": "Anywhere",
+        "state_province": "WA",
+        "country": "U.S.",
+        "postal_code": "12345",
+        "email": "Richard@yahoo.com",
+        "user_id": 3
+    }
+},
+    {
+    "model": "bangazon_webstore.paymenttype",
+    "pk": 1,
+    "fields": {
+        "card_type": "Visa",
+        "card_number": "12345678",
+        "cvv": "123",
+        "expiration": "2019-06-11",
+        "name_on_card": "Johnny Appleseed",
+        "customer": 1
+    }
+},
+    {
+    "model": "bangazon_webstore.paymenttype",
+    "pk": 2,
+    "fields": {
+        "card_type": "Mastercard",
+        "card_number": "23456789",
+        "cvv": "234",
+        "expiration": "2019-03-22",
+        "name_on_card": "Ashley Simpson",
+        "customer": 2
+    }
+},
+    {
+    "model": "bangazon_webstore.paymenttype",
+    "pk": 3,
+    "fields": {
+        "card_type": "Discover",
+        "card_number": "456789123",
+        "cvv": "567",
+        "expiration": "2020-11-27",
+        "name_on_card": "Richard Sherman",
+        "customer": 3
+    }
+}
+]
