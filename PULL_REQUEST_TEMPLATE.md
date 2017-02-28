@@ -1,8 +1,8 @@
-##Pull Requests
+## Pull Requests
 
 <!--- When you submit a pull request to the project repository, it should provide all of the following information. -->
 
-##Descriptions:
+## Descriptions:
 
 * Please describe what issue this PR solves
 
@@ -16,15 +16,15 @@
 <!--- Give context to what feature you were completing so that your teammate has a mental model before looking at the code. -->
 
 
-##Steps to Test:
+## Steps to Test:
 
 <!--- What steps are necessary to test the code. -->
 
-##Related Issue:
+## Related Issue:
 
 <!--- Select the ISSUE this resolves here: -->
 
-##System configuration.
+## System configuration.
 
 
 * Are there 3rd party libraries that need to be installed?
