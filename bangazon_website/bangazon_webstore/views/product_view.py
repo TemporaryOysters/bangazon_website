@@ -8,6 +8,9 @@ from bangazon_webstore.models import product_model
 
 
 class ProductViewSet(TemplateView):
-    # context = product_model.Product.objects.all()
 
     template_name = "bangazon_webstore/products.html"
+
+def get_products(request):
+    product_queryset = product_model.Product.objects.all()
+    return render(request, 'bangazon_webstore/products.html', {'product':product_queryset})
