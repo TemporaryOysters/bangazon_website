@@ -1,5 +1,5 @@
 from django.db import models
-from bangazon_webstore.models.customer import Customer
+from bangazon_webstore.models.customer_model import Customer
 
 
 class PaymentType(models.Model):
@@ -40,7 +40,6 @@ class PaymentType(models.Model):
 
     def get_customer(self):
         return self.customer
-
 
     def get_customer_name(self):
         return self.customer.get_full_name()

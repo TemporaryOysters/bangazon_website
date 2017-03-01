@@ -1,7 +1,7 @@
 from django.test import TestCase
 import sys
 sys.path.append("../")
-from bangazon_webstore.models import product_model, product_type_model, customer
+from bangazon_webstore.models import product_model, product_type_model, customer_model
 
 class TestProduct(TestCase):
     ''' 
@@ -23,8 +23,8 @@ class TestProduct(TestCase):
     @classmethod
     def setUp(self):
         self.toys = product_type_model.ProductType(label_name="Toys")
-        self.barbaraUser = customer.User(email = "b@b.com", password = "4321")
-        self.barbara = customer.Customer(first_name = 'Barbara', last_name = 'Scout', address = '120 18th Ave', city = 'Nashville', state_province = 'TN', postal_code = '45909', user = self.barbaraUser )
+        self.barbaraUser = customer_model.User(email = "b@b.com", password = "4321")
+        self.barbara = customer_model.Customer(first_name = 'Barbara', last_name = 'Scout', address = '120 18th Ave', city = 'Nashville', state_province = 'TN', postal_code = '45909', user = self.barbaraUser )
         self.kickball = product_model.Product(name="kickball", description="Round Ball", price=5, quantity=3, seller=self.barbara, product_type=self.toys)
 
     def test_product_model_can_be_created_with_correct_fields(self):

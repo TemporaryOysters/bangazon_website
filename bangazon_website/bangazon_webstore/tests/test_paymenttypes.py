@@ -3,7 +3,7 @@ import sys
 sys.path.append('../') 
 
 from bangazon_webstore.models.paymenttypes import PaymentType
-from bangazon_webstore.models.customer import Customer
+from bangazon_webstore.models.customer_model import Customer
 from django.contrib.auth.models import User
 
 
