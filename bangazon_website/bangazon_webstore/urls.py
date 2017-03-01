@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^login_customer/', customer_view.login_customer, name='login_customer'),
     url(r'^logout/', customer_view.logout_customer, name='logout'),
     url(r'^products/', product_view.get_products, name='products'),
+    url(r'^products/', product_view.get_products, name='products'),
     url(r'^productdetail/', customer_view.logout_customer, name='productdetail'),
     url(r'^order/', customer_view.logout_customer, name='order'),
     url(r'^account/', customer_view.logout_customer, name='account'),
