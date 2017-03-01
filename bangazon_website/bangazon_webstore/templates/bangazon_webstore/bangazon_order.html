@@ -1,7 +1,7 @@
 {% block order %}
     <table>
     <tr>
-    {% for order in orders %}
+    {% for order in bangazon_orders %}
             <td>{{ order }}</td>
         {% if not forloop.last and forloop.counter == 3 or forloop.counter == 6 %}
         </tr>
@@ -11,3 +11,4 @@
         </tr>
     </table>
 {% endblock %}
+
