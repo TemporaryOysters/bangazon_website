@@ -1,0 +1,19 @@
+{% extends 'bangazon_webstore/base.html' %}
+
+{% block content %}
+  <h1>Bangazon</h1>
+  {% for pt in producttype %}
+    <div>
+      <h3>{{ pt.label_name }}</h3>
+      {% for p in product %}
+        {% if p.product_type.pk == pt.pk %}
+          <div>
+            <h6>{{ p.name }}</h6>
+            <p>{{ p.price }}</p>
+            <button></button>
+          </div>
+    </div>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endblock %}

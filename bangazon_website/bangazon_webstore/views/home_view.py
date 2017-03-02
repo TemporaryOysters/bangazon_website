@@ -7,11 +7,13 @@ sys.path.append("../")
 from bangazon_webstore.models import product_model, product_type_model
 
 
-class ProductViewSet(TemplateView):
-
-    template_name = "bangazon_webstore/products.html"
-
-def get_products(request):
+def get_products_and_types(request):
     product_queryset = product_model.Product.objects.all()
+    product_type_queryset = product_type_model.ProductType.objects.all()
 
-    return render(request, 'bangazon_webstore/products.html', {'product':product_queryset})
+    print("YOOOOOOO", product_type_queryset)
+
+    return render(request, 'bangazon_webstore/home.html', {
+        'product':product_queryset, 
+        'producttype':product_type_queryset
+    })
