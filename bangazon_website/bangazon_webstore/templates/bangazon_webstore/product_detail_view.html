@@ -1,0 +1,22 @@
+{% extends 'bangazon_webstore/base.html' %}
+
+{% block content %}
+{% csrf_token %}
+
+<h2>Product Detail View</h2>
+{% for p in product %}
+<h3>{{p.name}}</h3>
+<ul>
+    <li>Description: {{p.description}}</li>
+    <li>Category: {{p.product_type}}</li>
+    <li>Seller: {{p.seller}}</li>
+    <li>Price: ${{p.price}}</li>
+     <li><form action="/add_product_to_order/{{product.id}}/" method="POST">  
+        <button>Add to Order</button>    
+    </form>
+    </li>
+</ul>    
+{% endfor %}
+
+
+{% endblock %}
