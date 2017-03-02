@@ -5,6 +5,7 @@ from django.contrib import admin
 from .views import customer_view, product_detail_view, product_view
 from .views.customer_view import RegisterViewSet, LoginViewSet
 from .views.product_view import ProductViewSet
+from .views.payment_type_view import add_payment
 
 
 app_name = 'bangazon_webstore'
@@ -21,4 +22,5 @@ urlpatterns = [
     url(r'^order/', customer_view.logout_customer, name='order'),
     url(r'^account/', customer_view.logout_customer, name='account'),
     url(r'^cart/', customer_view.logout_customer, name='cart'),
+    url(r'^addpayment/', add_payment, name='add_payment'),
 ]
