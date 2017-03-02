@@ -22,5 +22,5 @@ urlpatterns = [
     url(r'^order/', customer_view.logout_customer, name='order'),
     url(r'^account/', customer_view.logout_customer, name='account'),
     url(r'^cart/', customer_view.logout_customer, name='cart'),
-    url(r'^addpayment/', add_payment, name='add_payment'),
+    url(r'^addpayment/', add_payment, name='addpayment'),
 ]

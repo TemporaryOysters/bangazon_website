@@ -1,13 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.decorators import login_required
 
 from bangazon_webstore.forms import PaymentTypeForm
 
 
-@login_required
+
 def add_payment(request):
+    print("THIS IS REQUEST:",request.user.id)
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -16,11 +15,14 @@ def add_payment(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.customer_id = request.user.id
+
+
             post.save()
+            print("GOT TO SAVE")
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            return HttpResponseRedirect('/orders/')
+            return HttpResponseRedirect(redirect_to='/webstore/products/')
 
     # if a GET (or any other method) we'll create a blank form
     else:

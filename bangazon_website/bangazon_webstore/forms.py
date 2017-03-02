@@ -3,7 +3,7 @@ from bangazon_webstore.models.paymenttypes import PaymentType
 from django.utils.translation import ugettext_lazy as _
 
 class PaymentTypeForm(forms.ModelForm):
-	
+
 	class Meta:
 		model = PaymentType
 		help_texts = {
