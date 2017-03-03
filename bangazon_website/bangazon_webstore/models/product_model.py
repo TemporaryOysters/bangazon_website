@@ -29,6 +29,9 @@ class Product(models.Model):
     seller = models.ForeignKey(customer_model.Customer)
     product_type = models.ForeignKey(product_type_model.ProductType)
 
+    def __str__(self):
+        return '{}'.format(self.product_type)
+
     def get_product_name(self):
         return self.name
 
