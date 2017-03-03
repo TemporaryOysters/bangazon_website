@@ -5,15 +5,17 @@
   {% for pt in producttype %}
     <div>
       <h3>{{ pt.label_name }}</h3>
-      {% for p in product %}
+      {% for pro in product %}
+        {% for p in pro %}
         {% if p.product_type.pk == pt.pk %}
           <div>
-            <h6>{{ p.name }}</h6>
+            <a href="http://localhost:8000/webstore/productdetail/"+{{p}}><h4>{{ p.name }}</h4></a>
             <p>{{ p.price }}</p>
             <button></button>
           </div>
     </div>
       {% endif %}
+      {% endfor %}
     {% endfor %}
   {% endfor %}
 {% endblock %}
