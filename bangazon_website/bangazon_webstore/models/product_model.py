@@ -25,9 +25,10 @@ class Product(models.Model):
     name = models.CharField(max_length=75)
     description = models.TextField()
     price = models.IntegerField()
-    quantity = models.IntegerField()
+    quantity = models.IntegerField(default=1)
     seller = models.ForeignKey(customer_model.Customer)
     product_type = models.ForeignKey(product_type_model.ProductType)
+    created = models.DateTimeField(auto_now_add=True)
 
     def get_product_name(self):
         return self.name
