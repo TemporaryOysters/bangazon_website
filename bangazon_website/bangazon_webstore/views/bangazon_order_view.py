@@ -30,3 +30,6 @@ def get_bangazon_orders(request):
 
     # all_orders = bangazon_order_model.BangazonOrder.objects.filter()
 
+    # def get_products_in_cart(self):
+    # if customer is logged in 
+    # get all products on order && all payment types
