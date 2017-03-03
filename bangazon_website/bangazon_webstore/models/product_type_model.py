@@ -13,3 +13,6 @@ class ProductType(models.Model):
         author: Richie Van Sickle
         """
         return self.label_name 
+
+    def __str__(self):
+        return '{}'.format(self.label_name)
