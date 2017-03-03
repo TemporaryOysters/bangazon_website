@@ -14,6 +14,5 @@ class ProductType(models.Model):
         """
         return self.label_name 
 
-    def get_five_recent_products(self):
-        print("WHAT IS SELF?!? WHO AM I!?!?", self.label_name)
-        return self.order_by('-pub_date')[:5]
+    def __str__(self):
+        return '{}'.format(self.label_name)

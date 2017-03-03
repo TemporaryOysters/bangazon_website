@@ -5,7 +5,7 @@ sys.path.append('../')
 from bangazon_webstore.models.paymenttypes import PaymentType
 from bangazon_webstore.models.customer_model import Customer
 from django.contrib.auth.models import User
-
+from bangazon_webstore.views.payment_type_view import add_payment
 
 
 class TestPaymentType(TestCase): 
@@ -71,8 +71,9 @@ class TestPaymentType(TestCase):
 
 
 
-    def test_can_get_payment_type_id_from_database(self):
-    #   self.assertEqual(1, self.visa.get_payment_id(self.visa))
+    def test_can_add_payment_type_to_database(self):
+        
+
         pass
 
 

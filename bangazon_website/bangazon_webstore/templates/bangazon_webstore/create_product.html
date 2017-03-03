@@ -1,0 +1,28 @@
+{% extends 'bangazon_webstore/base.html' %}
+{% block content %}
+<h1>Add A Product to Sell</h1> <div>
+
+	<h3>
+    <form id="add_product_form" method="post" action="addproduct">
+        {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+        {% for field in form.visible_fields %} <br><br>
+            {{ field.errors }}
+            {{ field.help_text }}
+            {{field}}
+            {{ field.product_type.label_name }}
+        {% endfor %}
+        </br><br>
+
+        
+
+    </h3>
+
+        <!-- Hidden Form requests url route from previous page -->
+        <input type="hidden" name="next" value="{{ request.GET.next }}">
+        <input type="submit" name="submit" value="Sell Product" />
+    </form>
+</div>
+{% endblock %}

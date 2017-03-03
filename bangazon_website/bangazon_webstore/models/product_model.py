@@ -30,6 +30,9 @@ class Product(models.Model):
     product_type = models.ForeignKey(product_type_model.ProductType)
     pub_date = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return '{}'.format(self.product_type)
+
     def get_product_name(self):
         return self.name
 
