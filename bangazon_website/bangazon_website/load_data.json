@@ -8,7 +8,8 @@
         "description": "HIGH VOLTAGE",
         "quantity": 3,
         "product_type": 1,
-        "seller_id": 1
+        "seller_id": 1,
+        "pub_date": "2016-01-28T13:20:30+03:00"
     }
 }, {
     "model": "bangazon_webstore.product",
@@ -19,31 +20,99 @@
         "description": "Refreshing Cola",
         "quantity": 2,
         "product_type": 2,
-        "seller_id": 2
+        "seller_id": 2,
+        "pub_date": "2015-12-25T13:20:30+03:00"
     }
 },
     {
     "model": "bangazon_webstore.product",
     "pk": 3,
     "fields": {
+        "name": "Bread",
+        "price": 1,
+        "description": "Sandwich hugger",
+        "quantity": 92,
+        "product_type": 2,
+        "seller_id": 2,
+        "pub_date": "2016-09-22T13:20:30+03:00"
+    }
+},  
+    {
+    "model": "bangazon_webstore.product",
+    "pk": 4,
+    "fields": {
+        "name": "Jar of pickles",
+        "price": 5,
+        "description": "Former cucumber",
+        "quantity": 4,
+        "product_type": 2,
+        "seller_id": 2,
+        "pub_date": "2016-10-11T13:20:30+03:00"
+    }
+},
+    {
+    "model": "bangazon_webstore.product",
+    "pk": 5,
+    "fields": {
+        "name": "Lettuce",
+        "price": 5,
+        "description": "Rabbit food",
+        "quantity": 1,
+        "product_type": 2,
+        "seller_id": 2,
+        "pub_date": "2017-01-04T13:20:30+03:00"
+    }
+},
+    {
+    "model": "bangazon_webstore.product",
+    "pk": 6,
+    "fields": {
+        "name": "Gushers",
+        "price": 3,
+        "description": "Juicy diet food",
+        "quantity": 4,
+        "product_type": 2,
+        "seller_id": 2,
+        "pub_date": "2017-02-10T13:20:30+03:00"
+    }
+},
+    {
+    "model": "bangazon_webstore.product",
+    "pk": 7,
+    "fields": {
+        "name": "Milk",
+        "price": 2.75,
+        "description": "Cow stuff",
+        "quantity": 1,
+        "product_type": 2,
+        "seller_id": 2,
+        "pub_date": "2017-02-13T13:20:30+03:00"
+    }
+},
+    {
+    "model": "bangazon_webstore.product",
+    "pk": 8,
+    "fields": {
         "name": "Rubber Nipples",
         "price": 12.59,
         "description": "RN",
         "quantity": 2,
         "product_type": 3,
-        "seller_id": 1
+        "seller_id": 1,
+        "pub_date": "2016-03-01T13:20:30+03:00"
     }
 },
     {
     "model": "bangazon_webstore.product",
-    "pk": 4,
+    "pk": 9,
     "fields": {
         "name": "Spray Cheese",
         "price": 4.99,
         "description": "CHEESE-EEEE",
         "quantity": 3,
         "product_type": 2,
-        "seller": 3
+        "seller": 3,
+        "pub_date": "2016-02-22T13:20:30+03:00"
     }
 },
     {
