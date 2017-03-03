@@ -10,15 +10,15 @@ from bangazon_webstore.models import bangazon_order_model
 class BangazonOrderView(TemplateView):
     template_name = 'bangazon_webstore/templates/bangazon_order.html'
 
-def get_bangazon_orders(request):
+def get_products_in_cart(request):
     """
     Returns all Bangazon Orders in a list form
     Author: Mark Ellis
     """
-    active_customer = bangazon_order_model.BangazonOrder.filter(customer="""
-    the logged in customer""")
+    print('This is the request for user', request.user.id)
+    active_customer = bangazon_order_model.BangazonOrder.objects.filter(request.user.id)
 
-    active_order = pass
+    active_order = "not yet determined"
 
     users_payment_types = bangazon_paymenttypes.PaymentType.filter(customer="""
     the logged in customer""")

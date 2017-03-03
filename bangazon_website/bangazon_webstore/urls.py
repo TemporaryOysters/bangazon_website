@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 import sys
 # sys.path.append("../")
 from django.contrib import admin
-from .views import customer_view, product_detail_view, product_view
+from .views import customer_view, product_detail_view, product_view, bangazon_order_view
 from .views.customer_view import RegisterViewSet, LoginViewSet
 from .views.product_view import ProductViewSet
 
@@ -20,5 +20,5 @@ urlpatterns = [
     url(r'^products/', product_view.get_products, name='products'),
     url(r'^order/', customer_view.logout_customer, name='order'),
     url(r'^account/', customer_view.logout_customer, name='account'),
-    url(r'^cart/', customer_view.get_products_in_cart, name='cart'),
+    url(r'^cart/', bangazon_order_view.get_products_in_cart, name='cart'),
 ]

@@ -1,5 +1,5 @@
 from django.db import models
-from . import customer_model, paymenttypes, product_model, product_order_model
+from . import customer_model, paymenttypes, product_model
 
 class BangazonOrder(models.Model):
     """
@@ -19,7 +19,7 @@ class BangazonOrder(models.Model):
     customer = models.ForeignKey(customer_model.Customer, on_delete=models.CASCADE)
     payment_type = models.ForeignKey(paymenttypes.PaymentType, on_delete=models.CASCADE)
     order_is_complete = models.BooleanField()
-    product = models.ManyToManyField(product_model.Product, through='product_order_model.ProductOrder')
+    product = models.ManyToManyField(product_model.Product)
 
     def set_order_is_complete(self):
         self.order_is_complete = 1
@@ -28,6 +28,6 @@ class BangazonOrder(models.Model):
     def get_order_is_complete(self):
         return self.order_is_complete
 
-    # def get_products_in_cart(self):
-    # if customer is logged in 
-    # get all products on order && all payment types
+
+
+
