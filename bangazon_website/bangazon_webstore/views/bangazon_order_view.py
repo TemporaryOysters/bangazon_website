@@ -16,14 +16,15 @@ def get_products_in_cart(request):
     Author: Mark Ellis
     """
     print('This is the request for user', request.user.id)
-    active_customer = bangazon_order_model.BangazonOrder.objects.filter(request.user.id)
+    active_order = bangazon_order_model.BangazonOrder.objects.get(customer__user = request.user)
 
-    active_order = "not yet determined"
+    products_on_order = active_order.products.all()
+    print("This is active order: ", active_order)
 
-    users_payment_types = bangazon_paymenttypes.PaymentType.filter(customer="""
-    the logged in customer""")
+    # users_payment_types = bangazon_paymenttypes.PaymentType.filter(customer="""
+    # the logged in customer""")
 
-    products_on_order = bangazon_order_model.BangazonOrder.filter()
+    # products_on_order = bangazon_order_model.BangazonOrder.filter()
 
 
 
