@@ -4,12 +4,15 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 import sys
 sys.path.append("../")
-from bangazon_webstore.models import product_model, product_type_model
+from bangazon_webstore.models.product_model import Product
+from bangazon_webstore.models.product_type_model import ProductType
 
 
-def get_category_info(request):
-    category_info = None
-
+def get_product_type_info(request, pk):
+    product_type = ProductType.objects.filter(id=pk)
+    products = Product.objects.filter(product_type=pk)
     return render(request, 'bangazon_webstore/product_category.html', {
-    'products_info': category_info
-})
+        'product_list': products,
+        'product_type': product_type[0]
+            })
+
