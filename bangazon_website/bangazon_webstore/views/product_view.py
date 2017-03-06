@@ -13,7 +13,9 @@ def get_products_types_and_count(request):
 
     for pt in product_type_queryset:
         p = product_model.Product.objects.filter(product_type=pt.pk).order_by('pub_date')
+
         product_type_info = {
+            'type_id': pt.pk, 
             'type_label_name': pt.label_name,
             'p_list': p.reverse()[:20],
             'count': p.count()
