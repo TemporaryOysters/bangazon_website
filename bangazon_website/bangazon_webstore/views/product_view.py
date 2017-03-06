@@ -7,11 +7,23 @@ sys.path.append("../")
 from bangazon_webstore.models import product_model, product_type_model
 
 
-class ProductViewSet(TemplateView):
+def get_products_types_and_count(request):
+    product_type_queryset = product_type_model.ProductType.objects.all()
+    p_queryset = []
 
-    template_name = "bangazon_webstore/products.html"
+    for pt in product_type_queryset:
+        p = product_model.Product.objects.filter(product_type=pt.pk).order_by('pub_date')
+        product_type_info = {
+            'type_label_name': pt.label_name,
+            'p_list': p.reverse()[:20],
+            'count': p.count()
+        }
 
-def get_products(request):
-    product_queryset = product_model.Product.objects.all()
+        p_queryset.append(product_type_info)
+        print("PLIST:", product_type_info['p_list'])
 
-    return render(request, 'bangazon_webstore/products.html', {'product':product_queryset})
+    # print("PRODUCT QUERYSET", p_queryset)
+
+    return render(request, 'bangazon_webstore/products.html', {
+        'products_info': p_queryset
+    })

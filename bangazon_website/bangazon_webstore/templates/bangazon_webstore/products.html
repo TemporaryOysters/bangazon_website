@@ -1,17 +1,16 @@
 {% extends 'bangazon_webstore/base.html' %}
 
 {% block content %}
-  <h1>Bangazon Products</h1>
-        <ul>
-        {% for p in product %}
-            <li>
-                <h3>{{ p.name }}</h3>
-                <p>{{ p.price }}</p>
-                <button></button>
-            </li>
-        {% endfor %}
-        </ul>
-  <form>
-  </form>
+  <h1>PRODUCTS</h1>
+  {% for prod in products_info %}
+    <div>
+      <a href="{% url 'bangazon_webstore:productcategory' %}"><h3>{{ prod.type_label_name }}({{ prod.count }})</h3></a>
+        {% for p in prod.p_list %}
+          <div>
+            <a href="{% url 'bangazon_webstore:productdetail' %}"><h4>{{ p.name }}</h4></a>
+            <p>${{ p.price }}</p>
+          </div>
+    </div>
+    {% endfor %}
+  {% endfor %}
 {% endblock %}
-
