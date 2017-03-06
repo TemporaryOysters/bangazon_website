@@ -9,9 +9,8 @@
         {% for p in pro %}
         {% if p.product_type.pk == pt.pk %}
           <div>
-            <a href="http://localhost:8000/webstore/productdetail/"><h4>{{ p.name }}</h4></a>
-            <p>{{ p.price }}</p>
-            <button></button>
+            <a href="{% url 'bangazon_webstore:productdetail' %}"><h4>{{ p.name }}</h4></a>
+            <p>${{ p.price }}</p>
           </div>
     </div>
       {% endif %}
