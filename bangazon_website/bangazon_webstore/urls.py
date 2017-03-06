@@ -27,7 +27,9 @@ urlpatterns += [  url(r'^home/', home_view.get_products_and_types, name='home'),
 
 urlpatterns += [
     url(r'^products/', product_view.get_products_types_and_count, name='products'),
-    url(r'^productdetail/', product_detail_view.get_product_detail, name='productdetail'),
     url(r'^producttype/(?P<pk>\d+)/', product_category_view.get_product_type_info, name='producttype'),
+    url(r'^productdetail/(?P<pk>\d+)/', product_detail_view.ProductDetailView.as_view(), name='productdetail'),
+    # url(r'^add_product_to_order/(?P<pk>\d+)/', product_detail_view.add_product_to_order, name='add_product_to_order'),
+    url(r'^productcategory/', product_category_view.get_category_info, name='productcategory'),
     url(r'^addproduct/', create_a_product, name='addproduct'),
 ]
