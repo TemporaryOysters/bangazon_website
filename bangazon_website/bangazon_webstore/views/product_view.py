@@ -22,7 +22,7 @@ def get_products_types_and_count(request):
         p_queryset.append(product_type_info)
         print("PLIST:", product_type_info['p_list'])
 
-    print("PRODUCT QUERYSET", p_queryset)
+    # print("PRODUCT QUERYSET", p_queryset)
 
     return render(request, 'bangazon_webstore/products.html', {
         'products_info': p_queryset
