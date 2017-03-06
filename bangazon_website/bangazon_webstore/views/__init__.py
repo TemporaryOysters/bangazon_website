@@ -1,1 +1,1 @@
-from .product_view import ProductViewSet
+from .product_view import get_products_types_and_count
