@@ -7,7 +7,7 @@
       <a href="{% url 'bangazon_webstore:productcategory' %}"><h3>{{ prod.type_label_name }}({{ prod.count }})</h3></a>
         {% for p in prod.p_list %}
           <div>
-            <a href="{% url 'bangazon_webstore:productdetail' %}"><h4>{{ p.name }}</h4></a>
+            <a href="{% url 'bangazon_webstore:productdetail' p.id %}"><h4>{{ p.name }}</h4></a>
             <p>${{ p.price }}</p>
           </div>
     </div>

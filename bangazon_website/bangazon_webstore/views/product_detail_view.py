@@ -6,18 +6,18 @@ from bangazon_webstore.models import ProductType, Product
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.base import TemplateView
+from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import logout, login, authenticate
 from bangazon_webstore import models
 
 
-class ProductDetailView(TemplateView):
-    template_name = "bangazon_webstore/product_detail.html"
-    model = models.Product
+class ProductDetailView(DetailView):
+    model = Product
 
 def get_product_detail(request):
-    product_detail_view = Product.objects.all()
-    return render(request, 'bangazon_webstore/product_detail_view.html', {'product': product_detail_view})
+    product_detail_view = Product.objects.filter(id=id)
+    return render(request, 'bangazon_webstore/product_detail.html', {'product': product_detail_view})
 
 # def add_product_to_order(request, pk):
 #     product = models.Product.objects.get(id = pk)
@@ -31,6 +31,7 @@ def get_product_detail(request):
 #         new_order = models.Order.objects.create(active = 1, customer = customer, payment_type = None)
 #         new_order.save()
 
-#     new_order.products.add(product)
+#     orderitem = models.OrderItems(product=product, order=new_order)
+#     orderitem.save()
 
-#     return HttpResponseRedirect(redirect_to='/products')   
+#     return redirect('products')  
