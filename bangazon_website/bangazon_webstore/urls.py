@@ -30,6 +30,5 @@ urlpatterns += [
     url(r'^producttype/(?P<pk>\d+)/', product_category_view.get_product_type_info, name='producttype'),
     url(r'^productdetail/(?P<pk>\d+)/', product_detail_view.ProductDetailView.as_view(), name='productdetail'),
     # url(r'^add_product_to_order/(?P<pk>\d+)/', product_detail_view.add_product_to_order, name='add_product_to_order'),
-    url(r'^productcategory/', product_category_view.get_category_info, name='productcategory'),
     url(r'^addproduct/', create_a_product, name='addproduct'),
 ]
