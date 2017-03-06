@@ -1,21 +1,17 @@
 {% extends 'bangazon_webstore/base.html' %}
 
 {% block content %}
-{% csrf_token %}
-
-<h2>Product Detail View</h2>
-<h3>{{product.name}}</h3>
-<ul>
-    <li>Description: {{product.description}}</li>
-    <li>Category: {{product.product_type}}</li>
-    <li>Seller: {{product.seller}}</li>
-    <li>Price: ${{product.price}}</li>
-     <li><form action="/add_product_to_order/{{product.id}}/" method="POST">  
-        <button>Add to Order</button>    
-    </form>
-    </li>
-</ul>    
-
-
+    <h1>Product Detail View</h1>
+    <h2>{{product.name}}</h2>
+    <div>
+        <h3>Description: {{product.description}}</h3>
+        <h3>Price: ${{product.price}}</h3>
+        <h3>Quantity: {{product.quantity}}</h3>
+        <form action="/webstore/products/" method="POST"> 
+        {% csrf_token %} 
+            <button>Buy Product</button>            
+        </form>
+        </div>
+    </div>    
 
 {% endblock %}
