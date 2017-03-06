@@ -1,0 +1,18 @@
+{% extends 'bangazon_webstore/base.html' %}
+
+{% block content %}
+
+    <h1>Product Detail View</h1>
+    <h2>{{product.name}}</h2>
+    <div>
+        <h3>Description: {{product.description}}</h3>
+        <h3>Price: ${{product.price}}</h3>
+        <h3>Quantity: {{product.quantity}}</h3>
+        <form action="/webstore/products/" method="POST"> 
+        {% csrf_token %} 
+            <button>Buy Product</button>            
+        </form>
+        </div>
+    </div>    
+
+{% endblock %}
