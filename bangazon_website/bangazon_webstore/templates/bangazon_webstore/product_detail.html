@@ -7,11 +7,12 @@
         <h3>Description: {{product.description}}</h3>
         <h3>Price: ${{product.price}}</h3>
         <h3>Quantity: {{product.quantity}}</h3>
-        <form action="/webstore/products/" method="POST"> 
-        {% csrf_token %} 
-            <button>Buy Product</button>            
-        </form>
-        </div>
-    </div>    
+    {% if user.is_authenticated %}
+    <form action="/webstore/add_product_to_order/{{product.id}}/" method="POST">
+    {% csrf_token %}
+    <button>Buy This Product!</button>
+    </form>
+    {% endif %}
+    </div>  
 
 {% endblock %}

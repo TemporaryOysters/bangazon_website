@@ -3,13 +3,14 @@ from bangazon_webstore.models.customer_model import Customer
 
 
 class PaymentType(models.Model):
-    
+
     """PaymentType model class
         The purpose of this class is to define a customer's payment types
         author: Zachary
         methods: string return
         meta: plural name
     """
+
     card_type = models.CharField(max_length=30)
     card_number = models.CharField(max_length=25)
     cvv = models.CharField(max_length=4)
