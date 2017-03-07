@@ -15,7 +15,7 @@ class BangazonOrder(models.Model):
     Author: Mark Ellis
     """
     customer = models.ForeignKey(customer_model.Customer, on_delete=models.CASCADE)
-    payment_type = models.ForeignKey(paymenttypes.PaymentType, on_delete=models.CASCADE, null = True)
+    payment_type = models.ForeignKey(paymenttypes.PaymentType, on_delete=models.CASCADE)
     order_is_complete = models.BooleanField()
 
     def set_order_is_complete(self):
