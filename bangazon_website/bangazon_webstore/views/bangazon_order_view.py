@@ -19,10 +19,11 @@ def get_products_in_cart(request):
     print('This is the request for user', request.user.id)
     active_order = bangazon_order_model.BangazonOrder.objects.get(customer__user = request.user)
 
+    print("This is the active order: ", active_order)
     products_on_order = active_order.product.all()
-    print("This is active order: ", active_order)
+    print("This is the first product: ", products_on_order[0].name)
 
-    return HttpResponse()
+    return render(request, 'bangazon_webstore/bangazon_order.html', {"product": products_on_order}) 
 
     # users_payment_types = bangazon_paymenttypes.PaymentType.filter(customer="""
     # the logged in customer""")

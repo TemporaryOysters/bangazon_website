@@ -1,60 +1,20 @@
-{% extends 'bangazon_webstore/base.html %}
-{% block order %}
+{% extends 'bangazon_webstore/base.html' %}
+{% block content %}
 <h2>Cart<h2>
     <table>
-    <tr>
-    <!--{% for product in active_order %}
-            <td>{{ order.product.name }}</td>
-            <td>{{ order.product.quantity }}</td>
-            <td>{{ order.product.price}}</td>-->
+    {% for p in product %}
+        <tr>
+            <td>{{ p.name }}</td>
+            <td>{{ p.quantity }}</td>
+            <td>{{ p.price}}</td>
         <!--{% if not forloop.last and forloop.counter == 3 or forloop.counter == 6 %}-->
         </tr>
         <tr>
         <!--{% endif %}-->
-    <!--{% endfor %}
+    {% endfor %}
         </tr>
     </table>
 
-<h3>Total: ${{total|floatformat:2}}</h3>-->
+<h3>Total: ${{total|floatformat:2}}</h3>
 
 {% endblock %}
-
-<!--Need to create a table containing
-    product_model.Product.name
-    product_type_model.ProductTypes.label_name
-    product_model.Product.price
-
-Also dropdown
-    paymenttypes.PaymentType.card_type
-    paymenttypes.PaymentType.card_number
-
-Button for
-    completing order-->
-
-<!--{% extends 'bangazon_ui/index.html'%}
-{% block content %}
-<h2>My Order</h2>
-{% for item in product_list %}
-<ul>
-  <li>
-    <span> {{item.name}}</span>
-    <span> ${{item.price}}</span>
-  </li>
-</ul>
-{%endfor %}
-
-    <h3>Grand Total: ${{total|floatformat:2}}</h3>
-
-<form action="{%url 'bangazon_ui:order_detail'%}" method="post">
-    {% csrf_token %}
-    <select name="payment">
-        {% for payment in payment_type %}
-        <option value="{{payment.pk}}" selected="selected"> Payment {{payment.payment_type}}: {{payment.account_number}}</option>
-        {% endfor %}
-
-    </select>
-    <button type="submit"> Complete </button>
-</form>
-    <a href="{%url 'bangazon_ui:payment_type_create' %}"> Add Payment </a>
-
-{% endblock %}-->
