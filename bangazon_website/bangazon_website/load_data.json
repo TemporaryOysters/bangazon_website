@@ -68,30 +68,6 @@
     }
 },
     {
-    "model": "auth.user",
-    "pk": 1,
-    "fields": {
-        "username": "Johnny@aol.com",
-        "password": "1234"
-    }
-},  
-    {
-    "model": "auth.user",
-    "pk": 2,
-    "fields": {
-        "username": "Ashley@gmail.com",
-        "password": "1234"
-    }
-},
-    {
-    "model": "auth.user",
-    "pk": 3,
-    "fields": {
-        "username": "Richard@yahoo.com",
-        "password": "1234"
-    }
-},
-    {
     "model": "bangazon_webstore.customer",
     "pk": 1,
     "fields": {
@@ -137,6 +113,21 @@
     }
 },
     {
+    "model": "bangazon_webstore.customer",
+    "pk": 4,
+    "fields": {
+        "first_name": "Ultra",
+        "last_name": "Man",
+        "address": "Wanna Dr",
+        "city": "Tokyo",
+        "state_province": "WA",
+        "country": "Japan",
+        "postal_code": "12345",
+        "email": "Ultraman@yahoo.com",
+        "user_id": 4
+    }
+},
+    {
     "model": "bangazon_webstore.paymenttype",
     "pk": 1,
     "fields": {
@@ -173,6 +164,18 @@
     }
 },
     {
+    "model": "bangazon_webstore.paymenttype",
+    "pk": 4,
+    "fields": {
+        "card_type": "Discover",
+        "card_number": "1234567812341234",
+        "cvv": "098",
+        "expiration": "2020-1-27",
+        "name_on_card": "Ultra Man",
+        "customer": 4
+    }
+},
+    {
     "model": "bangazon_webstore.bangazonorder",
     "pk": 1,
     "fields": {
@@ -197,6 +200,15 @@
         "order_is_complete": true,
         "customer_id": 3,
         "payment_type_id": 3
+    }
+},
+    {
+    "model": "bangazon_webstore.bangazonorder",
+    "pk": 4,
+    "fields": {
+        "order_is_complete": true,
+        "customer_id": 4,
+        "payment_type_id": 4
     }
 }
 ]
