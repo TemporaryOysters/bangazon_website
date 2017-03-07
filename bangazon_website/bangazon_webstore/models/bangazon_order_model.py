@@ -19,7 +19,7 @@ class BangazonOrder(models.Model):
     customer = models.ForeignKey(customer_model.Customer, on_delete=models.CASCADE)
     payment_type = models.ForeignKey(paymenttypes.PaymentType, on_delete=models.CASCADE)
     order_is_complete = models.BooleanField()
-    product = models.ManyToManyField(product_model.Product)
+    product = models.ManyToManyField(product_model.Product, through = 'ProductOrder')
 
     def set_order_is_complete(self):
         self.order_is_complete = 1

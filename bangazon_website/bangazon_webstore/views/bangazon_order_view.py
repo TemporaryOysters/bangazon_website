@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
+from django.http import HttpResponse
 from django.views import generic
 from django.views.generic.base import TemplateView
 import sqlite3
@@ -18,8 +19,10 @@ def get_products_in_cart(request):
     print('This is the request for user', request.user.id)
     active_order = bangazon_order_model.BangazonOrder.objects.get(customer__user = request.user)
 
-    products_on_order = active_order.products.all()
+    products_on_order = active_order.product.all()
     print("This is active order: ", active_order)
+
+    return HttpResponse()
 
     # users_payment_types = bangazon_paymenttypes.PaymentType.filter(customer="""
     # the logged in customer""")
