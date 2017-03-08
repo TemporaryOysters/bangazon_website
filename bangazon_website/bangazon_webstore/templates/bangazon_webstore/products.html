@@ -3,14 +3,12 @@
 {% block content %}
   <h1>PRODUCTS</h1>
   {% for prod in products_info %}
-    <div>
       <a href="{% url 'bangazon_webstore:producttype' prod.type_id %}"><h3 class="product_type_header">{{ prod.type_label_name }}({{ prod.count }})</h3></a>
         {% for p in prod.p_list %}
           <div>
-            <a href="{% url 'bangazon_webstore:productdetail' p.id %}"><h4>{{ p.name }}</h4></a>
-            <p>${{ p.price }}</p>
+            <a href="{% url 'bangazon_webstore:productdetail' p.id %}"><h4 class="inline">{{ p.name }}</h4></a>
+            <p class="inline">${{ p.price }}</p>
           </div>
-    </div>
     {% endfor %}
   {% endfor %}
 {% endblock %}
