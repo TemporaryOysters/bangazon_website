@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-
 from bangazon_webstore.forms import PaymentTypeForm
 
 

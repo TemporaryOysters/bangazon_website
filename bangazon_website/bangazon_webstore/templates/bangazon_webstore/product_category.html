@@ -1,7 +1,7 @@
 {% extends 'bangazon_webstore/base.html' %}
 
 {% block content %}
-  <h1> {{ product_type}} </h1>
+  <h1 class="product_type_header"> {{ product_type}} </h1>
   {% for p in product_list %}
   <div>
       <a href="{% url 'bangazon_webstore:productdetail' p.id %}">

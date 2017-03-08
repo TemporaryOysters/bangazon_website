@@ -4,6 +4,7 @@
         <title>Bangazon Webstore</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
         <body>
@@ -34,9 +35,11 @@
                     <li {% if request.path == home %} class = 'active' {% endif %}><a href="{% url 'bangazon_webstore:home' %}">Home</a></li>
                     <li {% if request.path == products %} class = 'active' {% endif %}><a href="{% url 'bangazon_webstore:products' %}">Products</a></li>
                     <li {% if request.path == addproduct %} class = 'active' {% endif %}><a href="{% url 'bangazon_webstore:addproduct' %}">Sell Products</a></li>
+                    {% if user.username %}
+                    <li style="color: white"><a href="#">Welcome, {{ user.username }}</a></li>
+                    {% endif %}
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
-                    <li  {% if request.path == account %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:account' %}">account</a></li>
                     <li  {% if request.path == cart %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:cart' %}">cart</a></li>
                     <li  {% if request.path == login %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:login' %}">login</a></li>
                     <li  {% if request.path == register %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:register' %}">register</a></li>
