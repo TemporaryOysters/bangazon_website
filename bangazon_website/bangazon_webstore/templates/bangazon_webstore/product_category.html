@@ -1,12 +1,13 @@
 {% extends 'bangazon_webstore/base.html' %}
 
 {% block content %}
-  <h1> {{ product_type}} </h1>
+  <h1 class="no_hover_product_type_header"> {{ product_type}} </h1>
   {% for p in product_list %}
-  <div>
-	  <h3>{{p.name}}</h3>
-	  <h3>${{p.price}}</h3>
-
+  <div class="inline">
+      <a href="{% url 'bangazon_webstore:productdetail' p.id %}">
+        <h3>{{p.name}}</h3>
+      </a>
+      <h3>${{p.price}}</h3>
   </div>
   {% endfor %}
 

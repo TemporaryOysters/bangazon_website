@@ -2,28 +2,54 @@
 <html>
     <head>
         <title>Bangazon Webstore</title>
-        <!-- <link rel="stylesheet" href="{% static 'css/blog.css' %}"> -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
         <body>
-            <div class="page-header">
-                <h1><a href="/">Bangazon Webstore</a></h1>
-                    <ul id="nav">
-                        {% url 'bangazon_webstore:home' as home %}
-                        {% url 'bangazon_webstore:products' as products %}
-                        {% url 'bangazon_webstore:account' as account %}
-                        {% url 'bangazon_webstore:cart' as cart %}
-                        {% url 'bangazon_webstore:login' as login %}
-                        {% url 'bangazon_webstore:register' as register %}
-                        {% url 'bangazon_webstore:logout' as logout %}
-                        <li {% if request.path == products %} class = 'active' {% endif %}><a href="{% url 'bangazon_webstore:home' %}">Home</a></li>
-                        <li {% if request.path == products %} class = 'active' {% endif %}><a href="{% url 'bangazon_webstore:products' %}">Products</a></li>
-                        <li  {% if request.path == account %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:account' %}">account</a></li>
-                        <li  {% if request.path == cart %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:cart' %}">cart</a></li>
-                        <li  {% if request.path == login %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:login' %}">login</a></li>
-                        <li  {% if request.path == register %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:register' %}">register</a></li>
-                        <li  {% if request.path == logout %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:logout' %}">logout</a></li>
-                    </ul>
+            {% url 'bangazon_webstore:home' as home %}
+            {% url 'bangazon_webstore:products' as products %}
+            {% url 'bangazon_webstore:addproduct' as addproduct %}
+            {% url 'bangazon_webstore:account' as account %}
+            {% url 'bangazon_webstore:cart' as cart %}
+            {% url 'bangazon_webstore:login' as login %}
+            {% url 'bangazon_webstore:register' as register %}
+            {% url 'bangazon_webstore:logout' as logout %}
+            <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">Bangazon</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li {% if request.path == home %} class = 'active' {% endif %}><a href="{% url 'bangazon_webstore:home' %}">Home</a></li>
+                    <li {% if request.path == products %} class = 'active' {% endif %}><a href="{% url 'bangazon_webstore:products' %}">Products</a></li>
+                    <li {% if request.path == addproduct %} class = 'active' {% endif %}><a href="{% url 'bangazon_webstore:addproduct' %}">Sell Products</a></li>
+                    {% if user.username %}
+                    <li style="color: white"><a href="#">Welcome, {{ user.username }}</a></li>
+                    {% endif %}
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li  {% if request.path == cart %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:cart' %}">cart</a></li>
+                    <li  {% if request.path == login %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:login' %}">login</a></li>
+                    <li  {% if request.path == register %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:register' %}">register</a></li>
+                    <li  {% if request.path == logout %} class='active' {% endif %}><a href="{% url 'bangazon_webstore:logout' %}">logout</a></li>
+                  </ul>
+                    </li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
             </div>
             <div class="content container">
                 <div class="row">
