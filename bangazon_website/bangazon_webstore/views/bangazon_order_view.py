@@ -39,4 +39,4 @@ def get_products_in_cart(request):
     # <--- payment method
     payment_types = paymenttypes.PaymentType.objects.filter(customer__user = request.user)
 
-    return render(request, 'bangazon_webstore/bangazon_order.html', {"product": product_array, "total": total_price})
+    return render(request, 'bangazon_webstore/bangazon_order.html', {"product": product_array, "total": total_price, "payment_types": payment_types})
