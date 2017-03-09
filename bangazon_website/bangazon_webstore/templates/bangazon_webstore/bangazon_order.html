@@ -1,12 +1,12 @@
 {% extends 'bangazon_webstore/base.html' %}
 {% block content %}
 <h2>Cart<h2>
-    <table>
+    <table class="table">
     {% for p in product %}
         <tr>
-            <td>{{ p.0 }}</td>
-            <td>{{ p.1 }}</td>
-            <td>{{ p.2}}</td>
+            <td><h3>Product</h3>{{ p.0 }}</td>
+            <td><h3>Quantity</h3>{{ p.1 }}</td>
+            <td><h3>Price</h3>{{ p.2}}</td>
         <!--{% if not forloop.last and forloop.counter == 3 or forloop.counter == 6 %}-->
         </tr>
         <tr>
@@ -14,7 +14,7 @@
     {% endfor %}
         </tr>
     </table>
-
+<br>
 <div class="row">
   <div class="col-sm-3">
     {% if payment_types %}
