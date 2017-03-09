@@ -1,0 +1,42 @@
+{% extends 'bangazon_webstore/base.html' %}
+{% block content %}
+<h2>Cart<h2>
+    <table>
+    {% for p in product %}
+        <tr>
+            <td>{{ p.0 }}</td>
+            <td>{{ p.1 }}</td>
+            <td>{{ p.2}}</td>
+        <!--{% if not forloop.last and forloop.counter == 3 or forloop.counter == 6 %}-->
+        </tr>
+        <tr>
+        <!--{% endif %}-->
+    {% endfor %}
+        </tr>
+    </table>
+
+<div class="row">
+  <div class="col-sm-3">
+    {% if payment_types %}
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <h3><label for="sell">Choose Payment Type:</label></h3>
+        <select class="form-control" id="select_payment" name="select_payment" required>
+          {% for payment_type in payment_types %}
+          <option value="{{payment_type.id}}">{{payment_type.payment_type_name}} - {{payment_type.account}}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+      </br>
+      {% endif %}
+	<br>
+	</br>
+	<button class="btn btn-success">Complete order</button>    
+  </div>
+</div>
+
+<h3>Total: ${{total|floatformat:2}}</h3>
+
+{% endblock %}
