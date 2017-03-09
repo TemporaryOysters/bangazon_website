@@ -137,30 +137,6 @@
     }
 },
     {
-    "model": "auth.user",
-    "pk": 1,
-    "fields": {
-        "username": "Johnny@aol.com",
-        "password": "1234"
-    }
-},  
-    {
-    "model": "auth.user",
-    "pk": 2,
-    "fields": {
-        "username": "Ashley@gmail.com",
-        "password": "1234"
-    }
-},
-    {
-    "model": "auth.user",
-    "pk": 3,
-    "fields": {
-        "username": "Richard@yahoo.com",
-        "password": "1234"
-    }
-},
-    {
     "model": "bangazon_webstore.customer",
     "pk": 1,
     "fields": {
